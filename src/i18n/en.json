@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "ages": "Ages",
+    "sleep": "Sleep",
+    "feeding": "Feeding",
+    "development": "Development",
+    "playLanguage": "Play & Language",
+    "wellbeing": "Parent Wellbeing",
+    "resources": "References"
+  },
+  "childProfile": {
+    "title": "My Child",
+    "name": "Child's name (optional)",
+    "birthdate": "Date of birth",
+    "premature": "Born prematurely",
+    "weeksEarly": "Weeks early",
+    "save": "Save",
+    "currentAge": "Current age",
+    "correctedAge": "Corrected age",
+    "months": "months",
+    "years": "years",
+    "and": "and",
+    "noProfile": "Add your child's info to personalize content"
+  },
+  "readingMode": {
+    "quick": "Quick",
+    "deep": "Deep dive",
+    "label": "Reading mode"
+  },
+  "search": {
+    "placeholder": "Search all topics…",
+    "noResults": "No results found",
+    "openHint": "Press ⌘K to search"
+  },
+  "bookmarks": {
+    "add": "Bookmark",
+    "remove": "Remove bookmark",
+    "empty": "No bookmarks yet",
+    "title": "Bookmarks"
+  },
+  "ages": {
+    "timeline": "Age timeline",
+    "selectAge": "Select an age",
+    "correctedAgeNote": "Showing corrected age for premature birth",
+    "youAreHere": "Your child",
+    "whatYouSee": "What you may see",
+    "howToSupport": "How to support",
+    "sleepFocus": "Sleep at this stage",
+    "feedingFocus": "Feeding at this stage",
+    "safety": "Safety & environment",
+    "seekAdvice": "When to seek advice"
+  },
+  "references": {
+    "title": "References",
+    "viewAll": "View all references",
+    "filterBy": "Filter by topic",
+    "openDrawer": "Show sources",
+    "openIn": "Open in new tab"
+  },
+  "callout": {
+    "keyIdea": "Key idea",
+    "tryTonight": "Try this tonight",
+    "seekHelp": "When to seek help"
+  },
+  "common": {
+    "loading": "Loading…",
+    "notFound": "Page not found",
+    "backHome": "Back to home",
+    "print": "Print this page",
+    "language": "Language",
+    "disclaimer": "This website provides educational information only, not medical advice. Always consult your pediatrician.",
+    "madeBy": "Made by Edgard N.",
+    "educationalOnly": "Educational content only — not medical advice"
+  },
+  "hero": {
+    "home": {
+      "title": "Parent Atlas",
+      "subtitle": "Evidence-based guidance for the first five years",
+      "cta": "Explore by age"
+    },
+    "ages": "Age Guide",
+    "sleep": "Sleep Guide",
+    "feeding": "Feeding & Solids",
+    "development": "Development",
+    "playLanguage": "Play & Language",
+    "wellbeing": "Parent Wellbeing",
+    "resources": "References Library"
+  }
+}

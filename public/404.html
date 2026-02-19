@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parent Atlas</title>
+  <script>
+    // SPA redirect fallback for static hosting without .htaccess support
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    window.location.replace(
+      window.location.origin + '/?redirect=' + encodeURIComponent(path + search + hash)
+    );
+  </script>
+</head>
+<body></body>
+</html>

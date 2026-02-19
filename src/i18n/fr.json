@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "ages": "Âges",
+    "sleep": "Sommeil",
+    "feeding": "Alimentation",
+    "development": "Développement",
+    "playLanguage": "Jeu & Langage",
+    "wellbeing": "Bien-être parental",
+    "resources": "Références"
+  },
+  "childProfile": {
+    "title": "Mon enfant",
+    "name": "Prénom (optionnel)",
+    "birthdate": "Date de naissance",
+    "premature": "Né(e) prématurément",
+    "weeksEarly": "Semaines d'avance",
+    "save": "Enregistrer",
+    "currentAge": "Âge actuel",
+    "correctedAge": "Âge corrigé",
+    "months": "mois",
+    "years": "ans",
+    "and": "et",
+    "noProfile": "Ajoutez les infos de votre enfant pour personnaliser le contenu"
+  },
+  "readingMode": {
+    "quick": "Rapide",
+    "deep": "Approfondi",
+    "label": "Mode lecture"
+  },
+  "search": {
+    "placeholder": "Rechercher…",
+    "noResults": "Aucun résultat",
+    "openHint": "Appuyez sur ⌘K pour rechercher"
+  },
+  "bookmarks": {
+    "add": "Enregistrer",
+    "remove": "Retirer",
+    "empty": "Aucun favori",
+    "title": "Favoris"
+  },
+  "ages": {
+    "timeline": "Calendrier des âges",
+    "selectAge": "Choisir un âge",
+    "correctedAgeNote": "Âge corrigé affiché (prématurité)",
+    "youAreHere": "Votre enfant",
+    "whatYouSee": "Ce que vous observez",
+    "howToSupport": "Comment soutenir",
+    "sleepFocus": "Le sommeil à cet âge",
+    "feedingFocus": "L'alimentation à cet âge",
+    "safety": "Sécurité & environnement",
+    "seekAdvice": "Quand consulter"
+  },
+  "references": {
+    "title": "Références",
+    "viewAll": "Voir toutes les références",
+    "filterBy": "Filtrer par thème",
+    "openDrawer": "Voir les sources",
+    "openIn": "Ouvrir dans un nouvel onglet"
+  },
+  "callout": {
+    "keyIdea": "Idée clé",
+    "tryTonight": "À essayer ce soir",
+    "seekHelp": "Quand consulter"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "notFound": "Page introuvable",
+    "backHome": "Retour à l'accueil",
+    "print": "Imprimer cette page",
+    "language": "Langue",
+    "disclaimer": "Ce site fournit des informations éducatives uniquement, pas des conseils médicaux. Consultez toujours votre pédiatre.",
+    "madeBy": "Fait par Edgard N.",
+    "educationalOnly": "Contenu éducatif uniquement — pas de conseil médical"
+  },
+  "hero": {
+    "home": {
+      "title": "Parent Atlas",
+      "subtitle": "Des repères fondés sur les données probantes pour les cinq premières années",
+      "cta": "Explorer par âge"
+    },
+    "ages": "Guide des âges",
+    "sleep": "Guide du sommeil",
+    "feeding": "Alimentation & diversification",
+    "development": "Développement",
+    "playLanguage": "Jeu & Langage",
+    "wellbeing": "Bien-être parental",
+    "resources": "Bibliothèque de références"
+  }
+}
