@@ -4,10 +4,14 @@ import { AGE_STEPS } from '@/data/ageSteps'
 export function getAgeInMonths(birthdate: string): number {
   const birth = new Date(birthdate)
   const now = new Date()
-  return (
+  let months =
     (now.getFullYear() - birth.getFullYear()) * 12 +
     (now.getMonth() - birth.getMonth())
-  )
+  // Subtract one if we haven't yet reached the birth day-of-month this month
+  if (now.getDate() < birth.getDate()) {
+    months -= 1
+  }
+  return Math.max(0, months)
 }
 
 export function getCorrectedAgeInMonths(

@@ -14,6 +14,7 @@ let fuseCache: Map<string, Fuse<SearchItem>> = new Map()
 
 function buildRoute(locale: string, section: string, slug: string): string {
   if (section === 'ages') return `/${locale}/ages/${slug}`
+  if (section === 'sleep/methods') return `/${locale}/sleep/${slug}`
   if (section === 'sleep') return `/${locale}/sleep`
   if (section === 'feeding') return `/${locale}/feeding`
   return `/${locale}/${section}`

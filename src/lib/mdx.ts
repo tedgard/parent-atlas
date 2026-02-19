@@ -45,11 +45,12 @@ export interface FrontmatterEntry {
 
 export function getAllFrontmatter(): FrontmatterEntry[] {
   return Object.entries(allFrontmatterRaw).map(([path, fm]) => {
+    // path format: /src/content/{locale}/{section[/subsection...}/{slug}.mdx
     const parts = path.split('/')
-    // path format: /src/content/{locale}/{section}/{slug}.mdx
     const locale = parts[3] ?? 'en'
-    const section = parts[4] ?? ''
-    const slug = (parts[5] ?? '').replace('.mdx', '')
+    // Everything between locale and the filename is the section path
+    const section = parts.slice(4, -1).join('/')
+    const slug = (parts[parts.length - 1] ?? '').replace('.mdx', '')
     return {
       path,
       locale,
