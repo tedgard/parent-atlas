@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent Atlas — Evidence-Based Parenting Guide</title>
+    <meta name="description" content="Science-backed parenting guidance for the first five years: sleep, feeding, development, and parent wellbeing." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Parent Atlas — Evidence-Based Parenting Guide" />
+    <meta property="og:description" content="Science-backed parenting guidance for the first five years." />
+    <meta property="og:site_name" content="Parent Atlas" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Print stylesheet -->
+    <link rel="stylesheet" href="/print.css" media="print" />
+
+    <!-- SPA redirect handler for static hosting fallback -->
+    <script>
+      (function() {
+        var redirect = new URLSearchParams(window.location.search).get('redirect');
+        if (redirect) {
+          window.history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

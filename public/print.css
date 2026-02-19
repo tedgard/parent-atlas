@@ -1,0 +1,55 @@
+@media print {
+  /* Hide navigation and interactive elements */
+  header,
+  nav,
+  footer,
+  button,
+  [role="dialog"],
+  [role="navigation"],
+  .sr-only {
+    display: none !important;
+  }
+
+  /* Show all reading mode content */
+  .quick-only,
+  .deep-only {
+    display: block !important;
+  }
+
+  /* Clean typography */
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
+  }
+
+  h1 { font-size: 20pt; margin-bottom: 8pt; }
+  h2 { font-size: 16pt; margin-top: 16pt; margin-bottom: 6pt; }
+  h3 { font-size: 14pt; margin-top: 12pt; margin-bottom: 4pt; }
+
+  /* Page breaks */
+  h2, h3 { page-break-after: avoid; }
+  p, ul, ol { page-break-inside: avoid; }
+
+  /* Links show URL */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Max width for readability */
+  .max-w-3xl,
+  .max-w-4xl,
+  .max-w-5xl {
+    max-width: 100% !important;
+  }
+
+  /* Remove shadows and rounded corners */
+  * {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
