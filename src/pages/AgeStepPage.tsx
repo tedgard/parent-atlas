@@ -47,16 +47,23 @@ export function AgeStepPage() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    setContent(null)
-    setFrontmatter(null)
-    setError(false)
     if (!ageStep) return
+    let cancelled = false
     loadMdxModule(l, 'ages', ageStep)
       .then((mod) => {
+        if (cancelled) return
         setContent(() => mod.default)
         setFrontmatter(mod.frontmatter)
+        setError(false)
       })
-      .catch(() => setError(true))
+      .catch(() => {
+        if (!cancelled) {
+          setContent(null)
+          setFrontmatter(null)
+          setError(true)
+        }
+      })
+    return () => { cancelled = true }
   }, [l, ageStep])
 
   const currentStep = AGE_STEPS.find((s) => s.slug === ageStep)

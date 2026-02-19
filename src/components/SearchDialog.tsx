@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
@@ -15,33 +15,35 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
   const l = locale ?? 'en'
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState<SearchItem[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  // Focus input when dialog opens
   useEffect(() => {
     if (open) {
-      setQuery('')
-      setResults([])
-      setActiveIndex(0)
       setTimeout(() => inputRef.current?.focus(), 50)
     }
   }, [open])
 
-  useEffect(() => {
-    if (!query.trim()) {
-      setResults([])
-      return
-    }
-    const index = getSearchIndex(l)
-    const hits = index.search(query).map((r) => r.item)
-    setResults(hits.slice(0, 8))
+  function handleClose() {
+    setQuery('')
     setActiveIndex(0)
+    onClose()
+  }
+
+  // Derive results synchronously — no second effect needed
+  const results = useMemo<SearchItem[]>(() => {
+    if (!query.trim()) return []
+    const index = getSearchIndex(l)
+    return index.search(query).map((r) => r.item).slice(0, 8)
   }, [query, l])
+
+  // Clamp active index whenever results change
+  const safeActiveIndex = Math.min(activeIndex, Math.max(0, results.length - 1))
 
   function handleSelect(item: SearchItem) {
     navigate(item.route)
-    onClose()
+    handleClose()
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
@@ -51,15 +53,15 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       setActiveIndex((i) => Math.max(i - 1, 0))
-    } else if (e.key === 'Enter' && results[activeIndex]) {
-      handleSelect(results[activeIndex])
+    } else if (e.key === 'Enter' && results[safeActiveIndex]) {
+      handleSelect(results[safeActiveIndex])
     } else if (e.key === 'Escape') {
-      onClose()
+      handleClose()
     }
   }
 
   return (
-    <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
+    <Dialog open={open} onOpenChange={(v) => !v && handleClose()}>
       <DialogContent className="p-0 gap-0 max-w-lg">
         <DialogTitle className="sr-only">{t('search.placeholder')}</DialogTitle>
         <div className="flex items-center border-b border-border px-4">
@@ -83,7 +85,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
                 <button
                   onClick={() => handleSelect(item)}
                   className={`w-full text-left px-4 py-3 text-sm transition-colors ${
-                    i === activeIndex
+                    i === safeActiveIndex
                       ? 'bg-accent text-accent-foreground'
                       : 'text-foreground hover:bg-muted'
                   }`}

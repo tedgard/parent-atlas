@@ -10,7 +10,7 @@ export interface SearchItem {
   slug: string
 }
 
-let fuseCache: Map<string, Fuse<SearchItem>> = new Map()
+const fuseCache: Map<string, Fuse<SearchItem>> = new Map()
 
 function buildRoute(locale: string, section: string, slug: string): string {
   if (section === 'ages') return `/${locale}/ages/${slug}`

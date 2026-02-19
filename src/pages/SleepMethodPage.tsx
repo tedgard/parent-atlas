@@ -17,15 +17,22 @@ export function SleepMethodPage() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    setContent(null)
-    setError(false)
     if (!method) return
+    let cancelled = false
     loadMdxModule(l, 'sleep/methods', method)
       .then((mod) => {
+        if (cancelled) return
         setContent(() => mod.default)
         setFrontmatter(mod.frontmatter)
+        setError(false)
       })
-      .catch(() => setError(true))
+      .catch(() => {
+        if (!cancelled) {
+          setContent(null)
+          setError(true)
+        }
+      })
+    return () => { cancelled = true }
   }, [l, method])
 
   if (error) {
